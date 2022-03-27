@@ -34,7 +34,6 @@ class Khach_Hang
             fflush(stdin);
             cout << "Nhap Ho Ten : ";
             cin.getline(Ho_Ten, 30);
-            Ngay_Sinh s1;
             cout << "Nhap Ngay Sinh : ";
             cin >> ns.Ngay;
             cout << "Nhap Thang Sinh : ";
@@ -56,6 +55,31 @@ class Khach_Hang
             cout << "So CMT : " << So_CMT << endl;
             cout << "Ho Khau : " << Ho_Khau << endl;                                          
         }
+
+        void Sap_Xep_Tang()
+        {
+			        if(arr[]Ho_Ten < hh[j].So_Luong)
+			        {
+				        HangHoa temp = hh[i];
+						        hh[i] = hh[j];
+						        hh[j] = temp;
+			        }
+		        }
+	        }
+        }
+
+        void Sinh_Nhat_T12()
+        {
+            cout << "============================="<< endl;
+            cout << "Khach Hang Sinh Thang 12 : " << endl;
+            if(ns.Thang == 12)
+            {
+                cout << "Ho Ten : "<< Ho_Ten << endl;
+                cout << "Ngay Sinh : " << ns.Ngay << "/" << ns.Thang << "/" << ns.Nam << endl;
+                cout << "So CMT : " << So_CMT << endl;
+                cout << "Ho Khau : " << Ho_Khau << endl;
+            }
+        }
 };
 
 int main()
@@ -64,17 +88,32 @@ int main()
     cout << "Nhap so Khach Hang : ";
     cin >> KH; 
     Khach_Hang arr[1000];
+    //Nhap
     for(int i = 0; i < KH; i++)
 	{
 		cout << "Khach Hang Thu "<< i+1 << endl;
 		arr[i].Nhap();
         fflush(stdin);
 	}
+    //Xuat
     for(int i = 0; i < KH; i++)
 	{
         cout << "==========================="<< endl;
         cout << "Khach Hang Thu "<< i+1 << endl;
         arr[i].Xuat();
     }
+    //Khach Hang Sinh Thang 12
+    for(int i = 0; i < KH; i++)
+    {
+        arr[i].Sinh_Nhat_T12();
+    }
+
+    for(int i = 0; i < n ;i++)
+	{
+		for(int j = i + 1 ; j < n; j++)
+		{
+            
+        }
+    }    
     return 0;
 }
