@@ -14,6 +14,7 @@ Viết chương trình nhập vào n(n nguyên dương nhập từ bàn phím) g
 */
 
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 
@@ -77,6 +78,11 @@ class Giao_Vien
                 cout << "Luong CB : " << Luong_Cb << endl;
             }
         }
+
+        char * getChuyen_Nganh()
+        {
+            return Chuyen_Nganh;
+        }
 };        
 
 
@@ -118,5 +124,21 @@ int main()
     {
         arr[i].Luong_Nho();
     }
+
+    cout << "============================="<< endl;
+    cout << "SAP XEP GIAO VIEN THEO CHUYEN NGANH " << endl;
+    for(int i = 0; i < GV; i++)
+    {
+	    for(int j = i+1; j < GV; j++)
+         {
+	        if(strcmpi(arr[i].getChuyen_Nganh(), arr[j].getChuyen_Nganh()) > 0)
+            {
+		        Giao_Vien tg = arr[i];
+		        arr[i] = arr[j];
+		        arr[j] = tg;	
+	        }
+	    }
+	    arr[i].Xuat();
+	}
     return 0;
 }
